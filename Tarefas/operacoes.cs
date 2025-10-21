@@ -32,9 +32,11 @@ public class Operacoes
 
     public IList<Tarefa> Listar()
     {
-        return Array.Empty<Tarefa>();
+        using(var conexao = new MySqlConnection(connectionString)
     }
-
+    
+    var sql = "SELECT id , nome, descricao, dataCriacao, dataExecucao, status"
+    
     public void Alterar(Tarefa tarefa)
     {
 
